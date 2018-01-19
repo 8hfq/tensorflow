@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+images
+.gitignore
+.idea/inspectionProfiles/
+.idea/modules.xml
+.idea/tensorflow_image_dispose.iml
+.idea/workspace.xml
+fixdata
