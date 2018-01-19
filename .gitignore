@@ -1,9 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
-images
+skin_train.tfrecords
+images/
 .gitignore
 .idea/inspectionProfiles/
 .idea/modules.xml
 .idea/tensorflow_image_dispose.iml
 .idea/workspace.xml
 fixdata
-skin_train.tfrecords
