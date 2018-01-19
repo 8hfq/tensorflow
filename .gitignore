@@ -6,3 +6,4 @@ images
 .idea/tensorflow_image_dispose.iml
 .idea/workspace.xml
 fixdata
+skin_train.tfrecords
