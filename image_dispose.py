@@ -78,22 +78,24 @@ def make_example(label, image):
 
 # 循环处理数据存储到tfr
 def dispose():
-    for index, name in enumerate(classes):
-        class_path = cwd + name + '/'
-        for img_name in os.listdir(class_path):
-            img_path = class_path + img_name  # 每一个图片的地址
-            image_raw_data = tf.gfile.FastGFile(img_path, 'rb').read()
-            with tf.Session() as sess:
-                img_data = tf.image.decode_jpeg(image_raw_data)
-                for i in range(10):
-                    result = preprocess_for_train(img_data, 225, 225, None)
-                    print(result)
-                   # img_dispose = tf.image.convert_image_dtype(result.eval(),dtype=tf.uint8)
-                    example = make_example(index, result.eval())
-                    writer.write(example.SerializeToString())
-            #j = j + 1
-            print("已经处理好了" + str(j) + "张" + str(name) + "图片")
-
+    try:
+        for index, name in enumerate(classes):
+            class_path = cwd + name + '/'
+            for img_name in os.listdir(class_path):
+                img_path = class_path + img_name  # 每一个图片的地址
+                image_raw_data = tf.gfile.FastGFile(img_path, 'rb').read()
+                with tf.Session() as sess:
+                    img_data = tf.image.decode_jpeg(image_raw_data)
+                    for i in range(10):
+                        result = preprocess_for_train(img_data, 225, 225, None)
+                        print(result)
+                       # img_dispose = tf.image.convert_image_dtype(result.eval(),dtype=tf.uint8)
+                        example = make_example(index, result.eval())
+                        writer.write(example.SerializeToString())
+                #j = j + 1
+                print("已经处理好了" + str(j) + "张" + str(name) + "图片")
+    except:
+        pass
 
 
 
