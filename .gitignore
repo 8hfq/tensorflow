@@ -6,4 +6,5 @@ images/
 .idea/modules.xml
 .idea/tensorflow_image_dispose.iml
 .idea/workspace.xml
+images.zip
 fixdata
